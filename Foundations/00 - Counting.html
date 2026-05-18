@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>02 - Probability Fields</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>00 - Counting</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs';
   
   mermaid.initialize({ startOnLoad: true });
@@ -13497,83 +13497,60 @@ div#notebook {
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
 <div class="container" id="notebook-container">
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=f4e5a8aa"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8dac519a"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <nav id="math-index" class="math-index">
 <ul>
-<li class="math-index-chapter"><a href="#chapter-1">Chapter 1 — Probability Fields</a></li>
-<li class="math-index-block math-index-definition"><a href="#field-of-probability"><span class="math-number">1.1</span> Definition: Definition — Field of Probability</a></li>
-<li class="math-index-block math-index-proposition"><a href="#construction-of-finite-probability-fields"><span class="math-number">1.1</span> Proposition: Proposition — Construction of Finite Probability Fields</a></li>
+<li class="math-index-chapter"><a href="#chapter-1">Chapter 1 — Counting</a></li>
+<li class="math-index-block math-index-definition"><a href="#combinations"><span class="math-number">1.1</span> Definition: Definition — Combinations Without Repetition</a></li>
+<li class="math-index-block math-index-definition"><a href="#combinations-with-repetition"><span class="math-number">1.2</span> Definition: Definition — Combinations With Repetition</a></li>
+<li class="math-index-block math-index-definition"><a href="#permutations"><span class="math-number">1.3</span> Definition: Definition — Permutations of Distinct Objects</a></li>
+<li class="math-index-block math-index-definition"><a href="#partial-permutations"><span class="math-number">1.4</span> Definition: Definition — Partial Permutations</a></li>
+<li class="math-index-block math-index-definition"><a href="#permutations-with-repetition"><span class="math-number">1.5</span> Definition: Definition — Permutations With Repetition</a></li>
+<li class="math-index-block math-index-definition"><a href="#stars-and-bars"><span class="math-number">1.6</span> Definition: Definition — Stars and Bars</a></li>
+<li class="math-index-block math-index-definition"><a href="#rule-of-product"><span class="math-number">1.7</span> Definition: Definition — Rule of Product</a></li>
+<li class="math-index-block math-index-definition"><a href="#rule-of-sum"><span class="math-number">1.8</span> Definition: Definition — Rule of Sum</a></li>
 </ul>
 </nav>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=a76ba132"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=14374dad"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <span id="chapter-1" class="math-anchor math-chapter-anchor"></span>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=041948f6"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=db40119a"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 
-        <details id="field-of-probability" class="math-block definition">
+        <details id="combinations" class="math-block definition">
         <summary class="math-block-summary">
-        <h3 id="Definition-%E2%80%94-Field-of-Probability"><span class="math-number">1.1 Definition: Definition — Field of Probability</span></h3><p>A system of sets$\mathcal{F}$ together with an assignment of numbers $P(A)$ satisfying Axioms I–V is called a field of probability.</p>
-        </summary>
-
-        
-
-        <div class="math-block-footer">
-        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
-        </div>
-
-        </details>
-        
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=ffa54e45"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-        <details id="construction-of-finite-probability-fields" class="math-block proposition">
-        <summary class="math-block-summary">
-        <h3 id="Proposition-%E2%80%94-Construction-of-Finite-Probability-Fields"><span class="math-number">1.1 Proposition: Proposition — Construction of Finite Probability Fields</span></h3><h1 id="Let%0A$%0AE=%5C%7B%5Cxi_1,%5Cxi_2,%5Cdots,%5Cxi_k%5C%7D%0A$$%0Abe-a-finite-set-of-elementary-events.%0ALet%0A$$%0Ap_1,p_2,%5Cdots,p_k%0A$$%0Abe-non-negative-real-numbers-satisfying%0A$$%0Ap_1+p_2+%5Ccdots+p_k=1%0A$$%0ATake%0A$$%0A%5Cmathcal%7BF%7D%0A$$%0Ato-be-the-set-of-all-subsets-of-$E$.%0ADefine%0A$$%0AP(%7B%5Cxi_%7Bi_1%7D,%5Cxi_%7Bi_2%7D,%5Cdots,%5Cxi_%7Bi_n%7D%7D)">Let
-$
-E=\{\xi_1,\xi_2,\dots,\xi_k\}
-$$
-be a finite set of elementary events.
-Let
-$$
-p_1,p_2,\dots,p_k
-$$
-be non-negative real numbers satisfying
-$$
-p_1+p_2+\cdots+p_k=1
-$$
-Take
-$$
-\mathcal{F}
-$$
-to be the set of all subsets of $E$.
-Define
-$$
-P({\xi_{i_1},\xi_{i_2},\dots,\xi_{i_n}})<a class="anchor-link" href="#Let%0A$%0AE=%5C%7B%5Cxi_1,%5Cxi_2,%5Cdots,%5Cxi_k%5C%7D%0A$$%0Abe-a-finite-set-of-elementary-events.%0ALet%0A$$%0Ap_1,p_2,%5Cdots,p_k%0A$$%0Abe-non-negative-real-numbers-satisfying%0A$$%0Ap_1+p_2+%5Ccdots+p_k=1%0A$$%0ATake%0A$$%0A%5Cmathcal%7BF%7D%0A$$%0Ato-be-the-set-of-all-subsets-of-$E$.%0ADefine%0A$$%0AP(%7B%5Cxi_%7Bi_1%7D,%5Cxi_%7Bi_2%7D,%5Cdots,%5Cxi_%7Bi_n%7D%7D)">¶</a></h1><p>p_{i_1}+p_{i_2}+\cdots+p_{i_n}
-$$
-
-Then
-
-$$
-(\mathcal{F},P)
+        <h3 id="Definition-%E2%80%94-Combinations-Without-Repetition"><span class="math-number">1.1 Definition: Definition — Combinations Without Repetition</span></h3><p>The number of unordered selections of $k$ objects from $n$ distinct objects is</p>
+<p>$$
+\binom{n}{k}
+=
+\frac{n!}{k!(n-k)!}.
 $$</p>
-<p>forms a finite field of probability.</p>
         </summary>
 
+        
+        <div class="proof-content">
+        <p>Begin with the number of ordered selections:</p>
+<p>$$
+\frac{n!}{(n-k)!}.
+$$</p>
+<p>Each unordered selection corresponds to exactly $k!$ reorderings.</p>
+<p>Therefore:</p>
+<p>$$
+\binom{n}{k}
+=
+\frac{n!}{k!(n-k)!}.
+$$</p>
+        </div>
         
 
         <div class="math-block-footer">
@@ -13585,9 +13562,274 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=4d9aaf79"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=5000e093"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="combinations-with-repetition" class="math-block definition">
+        <summary class="math-block-summary">
+        <h3 id="Definition-%E2%80%94-Combinations-With-Repetition"><span class="math-number">1.2 Definition: Definition — Combinations With Repetition</span></h3><p>The number of unordered selections of $k$ objects from $n$ types when repetition is allowed is</p>
+<p>$$
+\binom{n+k-1}{k}.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Represent the $k$ chosen objects by stars and separate the $n$ categories using $n-1$ bars.</p>
+<p>The total number of symbols is</p>
+<p>$$
+k+n-1.
+$$</p>
+<p>Choosing the positions of the $k$ stars gives</p>
+<p>$$
+\binom{n+k-1}{k}.
+$$</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=e467d5f0"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="permutations" class="math-block definition">
+        <summary class="math-block-summary">
+        <h3 id="Definition-%E2%80%94-Permutations-of-Distinct-Objects"><span class="math-number">1.3 Definition: Definition — Permutations of Distinct Objects</span></h3><p>The number of ways to arrange $n$ distinct objects in order is</p>
+<p>$$
+n!.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>There are:</p>
+<ul>
+<li>$n$ choices for the first position,</li>
+<li>$n-1$ for the second,</li>
+<li>continuing down to $1$.</li>
+</ul>
+<p>Thus:</p>
+<p>$$
+n(n-1)(n-2)\cdots1=n!.
+$$</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=b9064ecd"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="partial-permutations" class="math-block definition">
+        <summary class="math-block-summary">
+        <h3 id="Definition-%E2%80%94-Partial-Permutations"><span class="math-number">1.4 Definition: Definition — Partial Permutations</span></h3><p>The number of ordered selections of $k$ objects chosen from $n$ distinct objects is</p>
+<p>$$
+P(n,k)
+=
+\frac{n!}{(n-k)!}.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>There are:</p>
+<p>$$
+n
+$$</p>
+<p>choices for the first position,</p>
+<p>$$
+n-1
+$$</p>
+<p>for the second,</p>
+<p>continuing until</p>
+<p>$$
+n-k+1.
+$$</p>
+<p>Hence:</p>
+<p>$$
+n(n-1)\cdots(n-k+1)
+=
+\frac{n!}{(n-k)!}.
+$$</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=7b61089e"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="permutations-with-repetition" class="math-block definition">
+        <summary class="math-block-summary">
+        <h3 id="Definition-%E2%80%94-Permutations-With-Repetition"><span class="math-number">1.5 Definition: Definition — Permutations With Repetition</span></h3><p>Suppose among $n$ objects there are</p>
+<p>$$
+n_1,n_2,\dots,n_r
+$$</p>
+<p>indistinguishable copies of each type, with</p>
+<p>$$
+n_1+\cdots+n_r=n.
+$$</p>
+<p>The number of distinct permutations is</p>
+<p>$$
+\frac{n!}{n_1!n_2!\cdots n_r!}.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>If all objects were distinct there would be</p>
+<p>$$
+n!
+$$</p>
+<p>permutations.</p>
+<p>However, permuting identical objects among themselves does not create new arrangements.</p>
+<p>For each type $i$, there are</p>
+<p>$$
+n_i!
+$$</p>
+<p>redundant reorderings.</p>
+<p>Dividing removes the overcounting.</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=16fa3862"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="stars-and-bars" class="math-block definition">
+        <summary class="math-block-summary">
+        <h3 id="Definition-%E2%80%94-Stars-and-Bars"><span class="math-number">1.6 Definition: Definition — Stars and Bars</span></h3><p>The number of nonnegative integer solutions of</p>
+<p>$$
+x_1+x_2+\cdots+x_n=k
+$$</p>
+<p>is</p>
+<p>$$
+\binom{n+k-1}{k}.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Represent the $k$ units by stars and separate the $n$ variables using $n-1$ bars.</p>
+<p>Each arrangement uniquely determines a solution.</p>
+<p>The total number of symbols is</p>
+<p>$$
+k+n-1.
+$$</p>
+<p>Choosing the positions of the stars gives</p>
+<p>$$
+\binom{n+k-1}{k}.
+$$</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=9ececbaf"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="rule-of-product" class="math-block definition">
+        <summary class="math-block-summary">
+        <h3 id="Definition-%E2%80%94-Rule-of-Product"><span class="math-number">1.7 Definition: Definition — Rule of Product</span></h3><p>If a procedure consists of successive independent choices with</p>
+<p>$$
+n_1,n_2,\dots,n_k
+$$</p>
+<p>possible outcomes respectively, then the total number of outcomes is</p>
+<p>$$
+n_1n_2\cdots n_k.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>For each of the $n_1$ possibilities of the first choice, there are $n_2$ possibilities for the second choice, and so on.</p>
+<p>Multiplying recursively gives</p>
+<p>$$
+n_1n_2\cdots n_k.
+$$</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=720695fc"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="rule-of-sum" class="math-block definition">
+        <summary class="math-block-summary">
+        <h3 id="Definition-%E2%80%94-Rule-of-Sum"><span class="math-number">1.8 Definition: Definition — Rule of Sum</span></h3><p>If a task can occur in one of several mutually exclusive ways with counts</p>
+<p>$$
+n_1,n_2,\dots,n_k,
+$$</p>
+<p>then the total number of possibilities is</p>
+<p>$$
+n_1+n_2+\cdots+n_k.
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Since the possibilities are mutually exclusive, every valid outcome belongs to exactly one class.</p>
+<p>Therefore the total number is the sum of the cardinalities.</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
 </div>
 </div>
 </div>
