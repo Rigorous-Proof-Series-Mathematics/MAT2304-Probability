@@ -13509,6 +13509,10 @@ div#notebook {
 <li class="math-index-block math-index-proposition"><a href="#gaussian-variance"><span class="math-number">1.2</span> Proposition: Proposition — Variance of a Gaussian Distribution</a></li>
 <li class="math-index-block math-index-theorem"><a href="#standardization"><span class="math-number">1.2</span> Theorem: Theorem — Standardization of a Gaussian Variable</a></li>
 <li class="math-index-block math-index-theorem"><a href="#sum-of-independent-gaussians"><span class="math-number">1.3</span> Theorem: Theorem — Sum of Independent Gaussian Variables</a></li>
+<li class="math-index-block math-index-theorem"><a href="#multivariate-gaussian-independent"><span class="math-number">1.4</span> Theorem: Theorem — Multivariate Gaussian Distribution of Independent Variables</a></li>
+<li class="math-index-block math-index-theorem"><a href="#multivariate-gaussian-correlated"><span class="math-number">1.5</span> Theorem: Theorem — Multivariate Gaussian Distribution of Correlated Variables</a></li>
+<li class="math-index-block math-index-proposition"><a href="#marginal-independent-gaussian"><span class="math-number">1.3</span> Proposition: Proposition — Marginal Distribution in the Independent Gaussian Case</a></li>
+<li class="math-index-block math-index-theorem"><a href="#marginal-correlated-gaussian"><span class="math-number">1.6</span> Theorem: Theorem — Marginal Distribution of a Correlated Multivariate Gaussian</a></li>
 </ul>
 </nav>
 </div>
@@ -13853,6 +13857,316 @@ $$</p>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered" id="cell-id=7b4a2b81"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="multivariate-gaussian-independent" class="math-block theorem">
+        <summary class="math-block-summary">
+        <h3 id="Theorem-%E2%80%94-Multivariate-Gaussian-Distribution-of-Independent-Variables"><span class="math-number">1.4 Theorem: Theorem — Multivariate Gaussian Distribution of Independent Variables</span></h3><p>Let</p>
+<p>$$
+X_1,X_2,\dots,X_n
+$$</p>
+<p>be independent Gaussian random variables with</p>
+<p>$$
+X_i\sim\mathcal N(\mu_i,\sigma_i^2).
+$$</p>
+<p>Then the random vector</p>
+<p>$$
+\mathbf X=
+\begin{bmatrix}
+X_1\\
+X_2\\
+\vdots\\
+X_n
+\end{bmatrix}
+$$</p>
+<p>follows a multivariate Gaussian distribution with mean vector</p>
+<p>$$
+\mu=
+\begin{bmatrix}
+\mu_1\\
+\mu_2\\
+\vdots\\
+\mu_n
+\end{bmatrix}
+$$</p>
+<p>and covariance matrix</p>
+<p>$$
+\Sigma=
+\begin{bmatrix}
+\sigma_1^2 &amp;0&amp;\cdots&amp;0\\
+0&amp;\sigma_2^2&amp;\cdots&amp;0\\
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+0&amp;0&amp;\cdots&amp;\sigma_n^2
+\end{bmatrix}.
+$$</p>
+<p>Its density is</p>
+<p>$$
+p(\mathbf x)
+=
+\frac1{(2\pi)^{n/2}|\Sigma|^{1/2}}
+\exp\left(
+-\frac12
+(\mathbf x-\mu)^T
+\Sigma^{-1}
+(\mathbf x-\mu)
+\right).
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Independence implies</p>
+<p>$$
+p(\mathbf x)
+=
+\prod_{i=1}^n
+\frac1{\sqrt{2\pi\sigma_i^2}}
+\exp\left(
+-\frac{(x_i-\mu_i)^2}{2\sigma_i^2}
+\right).
+$$</p>
+<p>Combining the exponentials gives</p>
+<p>$$
+p(\mathbf x)
+=
+\frac1{(2\pi)^{n/2}\prod_i\sigma_i}
+\exp\left(
+-\frac12
+\sum_i
+\frac{(x_i-\mu_i)^2}{\sigma_i^2}
+\right).
+$$</p>
+<p>Recognizing</p>
+<p>$$
+|\Sigma|^{1/2}
+=
+\prod_i\sigma_i
+$$</p>
+<p>and</p>
+<p>$$
+(\mathbf x-\mu)^T\Sigma^{-1}(\mathbf x-\mu)
+=
+\sum_i
+\frac{(x_i-\mu_i)^2}{\sigma_i^2},
+$$</p>
+<p>we obtain the multivariate Gaussian form.</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=e0b34bac"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="multivariate-gaussian-correlated" class="math-block theorem">
+        <summary class="math-block-summary">
+        <h3 id="Theorem-%E2%80%94-Multivariate-Gaussian-Distribution-of-Correlated-Variables"><span class="math-number">1.5 Theorem: Theorem — Multivariate Gaussian Distribution of Correlated Variables</span></h3><p>Let</p>
+<p>$$
+\mathbf X=
+\begin{bmatrix}
+X_1\\
+X_2\\
+\vdots\\
+X_n
+\end{bmatrix}
+$$</p>
+<p>be a Gaussian random vector with mean vector</p>
+<p>$$
+\mu
+$$</p>
+<p>and covariance matrix</p>
+<p>$$
+\Sigma.
+$$</p>
+<p>Then its density is</p>
+<p>$$
+p(\mathbf x)
+=
+\frac1{(2\pi)^{n/2}|\Sigma|^{1/2}}
+\exp\left(
+-\frac12
+(\mathbf x-\mu)^T
+\Sigma^{-1}
+(\mathbf x-\mu)
+\right).
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Unlike the independent case, the covariance matrix contains nonzero off-diagonal terms:</p>
+<p>$$
+\Sigma_{ij}
+=
+\mathrm{Cov}(X_i,X_j).
+$$</p>
+<p>Diagonalizing the covariance matrix:</p>
+<p>$$
+\Sigma
+=
+Q\Lambda Q^T,
+$$</p>
+<p>and defining</p>
+<p>$$
+\mathbf y
+=
+Q^T(\mathbf x-\mu),
+$$</p>
+<p>the quadratic form becomes</p>
+<p>$$
+(\mathbf x-\mu)^T\Sigma^{-1}(\mathbf x-\mu)
+=
+\mathbf y^T\Lambda^{-1}\mathbf y.
+$$</p>
+<p>The transformed variables become independent Gaussian modes.</p>
+<p>The determinant factor arises from the Jacobian of the transformation.</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=1a2d824a"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="marginal-independent-gaussian" class="math-block proposition">
+        <summary class="math-block-summary">
+        <h3 id="Proposition-%E2%80%94-Marginal-Distribution-in-the-Independent-Gaussian-Case"><span class="math-number">1.3 Proposition: Proposition — Marginal Distribution in the Independent Gaussian Case</span></h3><p>Let</p>
+<p>$$
+\mathbf X=
+(X_1,\dots,X_n)
+$$</p>
+<p>be a multivariate Gaussian vector with diagonal covariance matrix.</p>
+<p>Then the marginal distribution of any component (X_i) is</p>
+<p>$$
+X_i\sim\mathcal N(\mu_i,\sigma_i^2).
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>Because the variables are independent, the joint density factorizes:</p>
+<p>$$
+p(\mathbf x)
+=
+\prod_{j=1}^n p_j(x_j).
+$$</p>
+<p>The marginal density of (X_i) is obtained by integrating over all remaining variables:</p>
+<p>$$
+p_i(x_i)
+=
+\int
+p(\mathbf x)
+\prod_{j\neq i}dx_j.
+$$</p>
+<p>Since all factors integrate to (1),</p>
+<p>$$
+p_i(x_i)
+=
+\frac1{\sqrt{2\pi\sigma_i^2}}
+\exp\left(
+-\frac{(x_i-\mu_i)^2}{2\sigma_i^2}
+\right).
+$$</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=926c75c6"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+        <details id="marginal-correlated-gaussian" class="math-block theorem">
+        <summary class="math-block-summary">
+        <h3 id="Theorem-%E2%80%94-Marginal-Distribution-of-a-Correlated-Multivariate-Gaussian"><span class="math-number">1.6 Theorem: Theorem — Marginal Distribution of a Correlated Multivariate Gaussian</span></h3><p>Let</p>
+<p>$$
+\mathbf X=
+\begin{bmatrix}
+\mathbf X_a\\
+\mathbf X_b
+\end{bmatrix}
+$$</p>
+<p>be jointly Gaussian with mean</p>
+<p>$$
+\mu=
+\begin{bmatrix}
+\mu_a\\
+\mu_b
+\end{bmatrix}
+$$</p>
+<p>and covariance matrix</p>
+<p>$$
+\Sigma=
+\begin{bmatrix}
+\Sigma_{aa} &amp; \Sigma_{ab}\\
+\Sigma_{ba} &amp; \Sigma_{bb}
+\end{bmatrix}.
+$$</p>
+<p>Then the marginal distribution of (\mathbf X_a) is Gaussian:</p>
+<p>$$
+\mathbf X_a
+\sim
+\mathcal N(\mu_a,\Sigma_{aa}).
+$$</p>
+        </summary>
+
+        
+        <div class="proof-content">
+        <p>The marginal density is obtained by integrating the joint density over the variables in (\mathbf X_b):</p>
+<p>$$
+p(\mathbf x_a)
+=
+\int
+p(\mathbf x_a,\mathbf x_b)\,
+d\mathbf x_b.
+$$</p>
+<p>Since Gaussian integrals are closed under integration, the result remains Gaussian.</p>
+<p>The resulting mean vector is the corresponding subvector:</p>
+<p>$$
+\mu_a,
+$$</p>
+<p>and the covariance becomes the corresponding covariance block:</p>
+<p>$$
+\Sigma_{aa}.
+$$</p>
+<p>Thus marginals of multivariate Gaussians are themselves Gaussian.</p>
+        </div>
+        
+
+        <div class="math-block-footer">
+        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
+        </div>
+
+        </details>
+        
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=6159b475"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 </div>
