@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Probability</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>04 - Mathematical expectations</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs';
   
   mermaid.initialize({ startOnLoad: true });
@@ -13497,139 +13497,14 @@ div#notebook {
 <main>
 <div class="border-box-sizing" id="notebook" tabindex="-1">
 <div class="container" id="notebook-container">
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=55e98c92"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=b00d3621"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<nav id="math-index" class="math-index">
-<ul>
-<li class="math-index-chapter"><a href="#chapter-1">Chapter 1 — Elementary Theory of Probability</a></li>
-<li class="math-index-block math-index-axiom"><a href="#kolmogorov-field-of-events"><span class="math-number">1.1</span> Axiom: Axiom I — Field of Events</a></li>
-<li class="math-index-block math-index-axiom"><a href="#kolmogorov-total-space"><span class="math-number">1.2</span> Axiom: Axiom II — Total Space</a></li>
-<li class="math-index-block math-index-axiom"><a href="#kolmogorov-probability-measure"><span class="math-number">1.3</span> Axiom: Axiom III — Probability Measure</a></li>
-<li class="math-index-block math-index-axiom"><a href="#kolmogorov-normalization"><span class="math-number">1.4</span> Axiom: Axiom IV — Normalization</a></li>
-<li class="math-index-block math-index-axiom"><a href="#kolmogorov-additivity"><span class="math-number">1.5</span> Axiom: Axiom V — Finite Additivity</a></li>
-</ul>
-</nav>
+<!-- math-index -->
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=e1b42b8f"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<span id="chapter-1" class="math-anchor math-chapter-anchor"></span>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=fd53bc4e"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-        <details id="kolmogorov-field-of-events" class="math-block axiom">
-        <summary class="math-block-summary">
-        <h3 id="Axiom-I-%E2%80%94-Field-of-Events"><span class="math-number">1.1 Axiom: Axiom I — Field of Events</span></h3><p>Let $E$ be a collection of elementary events $ \xi,\eta,\zeta,\dots $ and let $\mathcal{F}$ be a collection of subsets of $E$, called random events.</p>
-<p>Then $ \mathcal{F} $ is a field of sets.</p>
-        </summary>
-
-        
-
-        <div class="math-block-footer">
-        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
-        </div>
-
-        </details>
-        
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=a8100e10"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-        <details id="kolmogorov-total-space" class="math-block axiom">
-        <summary class="math-block-summary">
-        <h3 id="Axiom-II-%E2%80%94-Total-Space"><span class="math-number">1.2 Axiom: Axiom II — Total Space</span></h3><p>The field of events contains the total set of elementary events:
-$
-E \in \mathcal{F}
-$</p>
-        </summary>
-
-        
-
-        <div class="math-block-footer">
-        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
-        </div>
-
-        </details>
-        
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=b8c2f4e8"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-        <details id="kolmogorov-probability-measure" class="math-block axiom">
-        <summary class="math-block-summary">
-        <h3 id="Axiom-III-%E2%80%94-Probability-Measure"><span class="math-number">1.3 Axiom: Axiom III — Probability Measure</span></h3><p>To every set $ A \in \mathcal{F} $ there corresponds a non-negative real number $P(A)$ called the probability of the event $begin:math:text$A$end:math:text$.</p>
-<p>Moreover, $P(A) \ge 0$</p>
-        </summary>
-
-        
-
-        <div class="math-block-footer">
-        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
-        </div>
-
-        </details>
-        
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=cca446fd"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-        <details id="kolmogorov-normalization" class="math-block axiom">
-        <summary class="math-block-summary">
-        <h3 id="Axiom-IV-%E2%80%94-Normalization"><span class="math-number">1.4 Axiom: Axiom IV — Normalization</span></h3><p>The probability of the total space equals one:
-$$P(E)=1$$</p>
-        </summary>
-
-        
-
-        <div class="math-block-footer">
-        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
-        </div>
-
-        </details>
-        
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=b10c8203"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-
-        <details id="kolmogorov-additivity" class="math-block axiom">
-        <summary class="math-block-summary">
-        <h3 id="Axiom-V-%E2%80%94-Finite-Additivity"><span class="math-number">1.5 Axiom: Axiom V — Finite Additivity</span></h3><p>If two events $A,B \in \mathcal{F}$ have no elements in common,$A \cap B = \varnothing$ then</p>
-<p>$$
-P(A+B)=P(A)+P(B)
-$$</p>
-        </summary>
-
-        
-
-        <div class="math-block-footer">
-        <div class="math-block-links">↑ <a href="#math-index">index</a> · <a href="#chapter-1">chapter</a></div>
-        </div>
-
-        </details>
-        
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered" id="cell-id=504d0be8"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered" id="cell-id=8cfe6b97"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 </div>
